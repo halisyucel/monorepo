@@ -1,0 +1,67 @@
+{
+  "name": "ui",
+  "version": "0.1.1",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "postinstall": "tsc && vite build",
+    "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.2.1",
+    "@storybook/addon-interactions": "^7.2.1",
+    "@storybook/addon-links": "^7.2.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.1",
+    "@storybook/builder-vite": "^7.2.1",
+    "@storybook/react": "^7.2.1",
+    "@storybook/react-vite": "^7.2.1",
+    "@storybook/testing-library": "^0.2.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "jsdom": "^22.1.0",
+    "sass": "^1.64.2",
+    "storybook": "^7.2.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.3.1",
+    "vitest": "^0.33.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/ui.core.cjs",
+  "module": "./dist/ui.core.es.js",
+  "exports": {
+    "./core": {
+      "import": "./dist/ui.core.es.js",
+      "require": "./dist/ui.core.cjs",
+      "types": "./dist/core.d.ts"
+    },
+    "./hooks": {
+      "import": "./dist/ui.hooks.es.js",
+      "require": "./dist/ui.hooks.cjs",
+      "types": "./dist/hooks.d.ts"
+    }
+  }
+}
