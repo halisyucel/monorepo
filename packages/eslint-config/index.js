@@ -5,10 +5,30 @@ module.exports = {
 	},
 	"extends": [
 		"eslint:recommended",
+		"airbnb",
+		"airbnb/hooks",
+		"airbnb-typescript",
 		"plugin:react/recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:import/recommended",
+		"plugin:jsx-a11y/recommended",
+		"plugin:storybook/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:@typescript-eslint/recommended",
 	],
 	"overrides": [
+		{
+			"files": ["*.test.ts", "*.test.tsx"],
+			"rules": {
+				"@typescript-eslint/no-use-before-define": "off",
+			}
+		},
+		{
+			"files": ["index.ts"],
+			"rules": {
+				"no-restricted-exports": "off",
+				"import/prefer-default-export": "off",
+			}
+		}
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
@@ -17,24 +37,12 @@ module.exports = {
 	},
 	"plugins": [
 		"react",
-		"@typescript-eslint"
+		"@typescript-eslint",
 	],
 	"rules": {
-		"indent": [
-			"error",
-			"tab"
-		],
-		"linebreak-style": [
-			"error",
-			"unix"
-		],
-		"quotes": [
-			"error",
-			"double"
-		],
-		"semi": [
-			"error",
-			"always"
-		]
+		"react/react-in-jsx-scope": "off",
+		"react/require-default-props": "off",
+		"react/jsx-props-no-spreading": "off",
+		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
 	}
 };
