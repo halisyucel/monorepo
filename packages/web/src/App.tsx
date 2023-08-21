@@ -1,7 +1,9 @@
+import { Box } from '@monorepo/ui/core';
+
 export default function App() {
-  return (
-    <div>
-      asdasd
-    </div>
-  );
+	return (
+		<Box<'a'> component="a" href="https://example.com">
+			asd
+		</Box>
+	);
 }
