@@ -13,20 +13,19 @@
     "format:check": "prettier -c 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@monorepo/ui": "./packages/ui",
+    "@monorepo/ui": "file:../ui",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@monorepo/eslint-config": "./packages/eslint-config",
-    "@types/react": "^18.2.15",
+    "@monorepo/eslint-config": "file:../eslint-config",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-config-prettier": "^9.0.0",
+    "@vitejs/plugin-react": "^4.0.4",
+    "eslint": "^8.47.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "3.0.2",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
   }
 }
