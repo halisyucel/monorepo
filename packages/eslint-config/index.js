@@ -14,6 +14,7 @@ module.exports = {
 		"plugin:storybook/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:@typescript-eslint/recommended",
+		"prettier",
 	],
 	"overrides": [
 		{
@@ -33,13 +34,16 @@ module.exports = {
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": "latest",
-		"sourceType": "module"
+		"sourceType": "module",
+		"warnOnUnsupportedTypeScriptVersion": false,
 	},
 	"plugins": [
 		"react",
 		"@typescript-eslint",
+		"prettier",
 	],
 	"rules": {
+		"prettier/prettier": "error",
 		"react/react-in-jsx-scope": "off",
 		"react/require-default-props": "off",
 		"react/jsx-props-no-spreading": "off",

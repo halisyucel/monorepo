@@ -5,16 +5,19 @@
   },
   "extends": [
     "eslint:recommended",
-    "@monorepo/eslint-config",
-    "prettier"
+    "@monorepo/eslint-config"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
     "project": ["./tsconfig.json", "./tsconfig.node.json"]
   },
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": "error"
-  }
+  "overrides": [
+    {
+      "files": ["src/system/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off"
+      }
+    }
+  ]
 }
