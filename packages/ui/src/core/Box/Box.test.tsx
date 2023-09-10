@@ -37,10 +37,8 @@ describe('Box', () => {
 		expect(box).toHaveClass('test-class');
 	});
 
-	it('should correctly render with component prop (native html element)', () => {
-		render(
-			<Box data-testid="test-box" component="a" href="https://example.com" />,
-		);
+	it('should correctly render with as prop (native html element)', () => {
+		render(<Box data-testid="test-box" as="a" href="https://example.com" />);
 
 		const box = screen.getByTestId('test-box');
 
@@ -48,9 +46,9 @@ describe('Box', () => {
 		expect(box).toHaveAttribute('href', 'https://example.com');
 	});
 
-	it('should correctly render with component prop (react component)', () => {
+	it('should correctly render with as prop (react component)', () => {
 		render(
-			<Box component={CustomComponent} custom="here">
+			<Box as={CustomComponent} custom="here">
 				<span data-testid="child">Test</span>
 			</Box>,
 		);

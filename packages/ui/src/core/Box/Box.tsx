@@ -1,26 +1,22 @@
-import {
-	ComponentPropsWithoutRef,
-	ComponentPropsWithRef,
-	ElementType,
-} from 'react';
-
-export type BoxProps<T extends ElementType> = ComponentPropsWithoutRef<T> & {
-	component?: T;
-	elementRef?: ComponentPropsWithRef<T>['ref'];
-};
-
-export type BoxPropsWithoutComponent<T extends ElementType> = Omit<
-	BoxProps<T>,
-	'component'
->;
+import { ElementType } from 'react';
+import cx from 'classnames';
+import { sx, PolymorphicElementProps } from '../../system';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Box<T extends ElementType<any> = 'div'>({
-	component,
+	as,
+	className,
 	elementRef,
+	sx: sxProps,
 	...otherProps
-}: BoxProps<T>) {
-	const Component = component ?? 'div';
+}: PolymorphicElementProps<T>) {
+	const Component = as || 'div';
 
-	return <Component ref={elementRef} {...otherProps} />;
+	return (
+		<Component
+			ref={elementRef}
+			className={cx(sx(sxProps), className)}
+			{...otherProps}
+		/>
+	);
 }
