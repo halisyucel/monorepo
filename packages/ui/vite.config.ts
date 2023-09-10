@@ -9,7 +9,7 @@ export default defineConfig({
     lib: {
       entry: {
         core: './src/core/index.ts',
-        hooks: './src/hooks/index.ts',
+        // hooks: './src/hooks/index.ts',
         system: './src/system/index.ts',
       },
       name: '@monorepo/ui',
