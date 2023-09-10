@@ -1,3 +1,6 @@
+// Global styles
+import '@monorepo/styles/globals.scss';
+
 // Box
 export { default as Box } from './Box';
 

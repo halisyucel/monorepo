@@ -76,6 +76,7 @@
       "import": "./dist/ui.system.es.js",
       "require": "./dist/ui.system.cjs",
       "types": "./dist/system.d.ts"
-    }
+    },
+    "./style.css": "./dist/style.css"
   }
 }
