@@ -1,0 +1,6 @@
+{
+  "name": "@monorepo/styles",
+  "version": "1.0.0",
+  "main": "globals.scss",
+  "license": "MIT"
+}

@@ -1,0 +1,83 @@
+$font-size: (
+  'xs': (12, 16),
+  'sm': (14, 20),
+  'md': (16, 24),
+  'lg': (18, 28),
+  'xl': (20, 32),
+);
+
+$font-weight: (
+  'thin': 100,
+  'extralight': 200,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extrabold': 800,
+  'black': 900,
+);
+
+$font-family: (
+  'sans': ('Noto Sans', sans-serif),
+  'serif': ('Noto Serif', serif),
+  'mono': ('JetBrains Mono', monospace),
+);
+
+$text-align: (
+  'left': left,
+  'center': center,
+  'right': right,
+  'justify': justify,
+);
+
+$text-transform: (
+  'uppercase': uppercase,
+  'lowercase': lowercase,
+  'capitalize': capitalize,
+  'none': none,
+);
+
+$text-decoration: (
+  'underline': underline,
+  'line-through': line-through,
+  'none': none,
+);
+
+
+@each $size, $values in $font-size {
+  .#{$library-prefix}-fontSize-#{$size} {
+    font-size: pxrem(nth($values, 1));
+    line-height: pxrem(nth($values, 2));
+  }
+}
+
+@each $weight, $value in $font-weight {
+  .#{$library-prefix}-fontWeight-#{$weight} {
+    font-weight: $value;
+  }
+}
+
+@each $family, $value in $font-family {
+  .#{$library-prefix}-fontFamily-#{$family} {
+    font-family: $value;
+  }
+}
+
+@each $align, $value in $text-align {
+  .#{$library-prefix}-textAlign-#{$align} {
+    text-align: $value;
+  }
+}
+
+@each $transform, $value in $text-transform {
+  .#{$library-prefix}-textTransform-#{$transform} {
+    text-transform: $value;
+  }
+}
+
+@each $decoration, $value in $text-decoration {
+  .#{$library-prefix}-textDecoration-#{$decoration} {
+    text-decoration: $value;
+  }
+}
