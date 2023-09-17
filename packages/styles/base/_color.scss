@@ -275,14 +275,12 @@ $color: (
   'rose-950': #4c0519,
 );
 
-@each $name, $value in $color {
-  .#{$library-prefix}-color-#{$name} {
-    color: $value;
-  }
-  .#{$library-prefix}-borderColor-#{$name} {
-    border-color: $value;
-  }
-  .#{$library-prefix}-backgroundColor-#{$name} {
-    background-color: $value;
+:root {
+  @each $name, $value in $color {
+    --#{$library-prefix}-color-#{$name}: #{$value};
+
+    @if str-slice($name, -3) == '500' {
+      --#{$library-prefix}-color-#{str-slice($name, 1, -5)}: #{$value};
+    }
   }
 }

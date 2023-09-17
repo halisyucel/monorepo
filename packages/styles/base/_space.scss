@@ -1,0 +1,20 @@
+$space: (
+  'none': 0,
+  '4xs': 0.5,
+  '3xs': 1,
+  '2xs': 2,
+  'xs': 4,
+  'sm': 8,
+  'md': 12,
+  'lg': 16,
+  'xl': 24,
+  '2xl': 32,
+  '3xl': 48,
+  '4xl': 64,
+);
+
+:root {
+  @each $key, $value in $space {
+    --#{$library-prefix}-space-#{$key}: #{pxrem($value)};
+  }
+}

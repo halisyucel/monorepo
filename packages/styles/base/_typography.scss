@@ -1,9 +1,11 @@
 $font-size: (
+  '2xs': (10, 12),
   'xs': (12, 16),
   'sm': (14, 20),
   'md': (16, 24),
   'lg': (18, 28),
   'xl': (20, 32),
+  '2xl': (24, 36),
 );
 
 $font-weight: (
@@ -44,40 +46,39 @@ $text-decoration: (
   'none': none,
 );
 
+$text-overflow: (
+  'ellipsis': ellipsis,
+  'clip': clip,
+  'none': none,
+);
 
-@each $size, $values in $font-size {
-  .#{$library-prefix}-fontSize-#{$size} {
-    font-size: pxrem(nth($values, 1));
-    line-height: pxrem(nth($values, 2));
+:root {
+  @each $size, $values in $font-size {
+    --#{$library-prefix}-fontSize-#{$size}: #{pxrem(nth($values, 1))};
+    --#{$library-prefix}-lineHeight-#{$size}: #{pxrem(nth($values, 2))};
   }
-}
 
-@each $weight, $value in $font-weight {
-  .#{$library-prefix}-fontWeight-#{$weight} {
-    font-weight: $value;
+  @each $weight, $value in $font-weight {
+    --#{$library-prefix}-fontWeight-#{$weight}: #{$value};
   }
-}
 
-@each $family, $value in $font-family {
-  .#{$library-prefix}-fontFamily-#{$family} {
-    font-family: $value;
+  @each $family, $value in $font-family {
+    --#{$library-prefix}-fontFamily-#{$family}: #{$value};
   }
-}
 
-@each $align, $value in $text-align {
-  .#{$library-prefix}-textAlign-#{$align} {
-    text-align: $value;
+  @each $align, $value in $text-align {
+    --#{$library-prefix}-textAlign-#{$align}: #{$value};
   }
-}
 
-@each $transform, $value in $text-transform {
-  .#{$library-prefix}-textTransform-#{$transform} {
-    text-transform: $value;
+  @each $transform, $value in $text-transform {
+    --#{$library-prefix}-textTransform-#{$transform}: #{$value};
   }
-}
 
-@each $decoration, $value in $text-decoration {
-  .#{$library-prefix}-textDecoration-#{$decoration} {
-    text-decoration: $value;
+  @each $decoration, $value in $text-decoration {
+    --#{$library-prefix}-textDecoration-#{$decoration}: #{$value};
+  }
+
+  @each $overflow, $value in $text-overflow {
+    --#{$library-prefix}-textOverflow-#{$overflow}: #{$value};
   }
 }

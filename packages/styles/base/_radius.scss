@@ -1,0 +1,17 @@
+$border-radius: (
+  'none': 0,
+  'xs': 2,
+  'sm': 4,
+  'md': 6,
+  'lg': 8,
+  'xl': 12,
+  '2xl': 16,
+  '3xl': 20,
+  'full': 9999,
+);
+
+:root {
+  @each $size, $value in $border-radius {
+    --#{$library-prefix}-borderRadius-#{$size}: #{pxrem($value)};
+  }
+}
