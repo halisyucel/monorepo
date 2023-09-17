@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { PropsWithChildren } from 'react';
+import { expect } from 'vitest';
 import Box from './Box';
 
 describe('Box', () => {
@@ -28,13 +28,21 @@ describe('Box', () => {
 		expect(box).toHaveClass('test-class');
 	});
 
-	it('should correctly render with custom props', () => {
+	it('should render with custom props', () => {
 		render(<Box data-testid="test-box" id="test-id" className="test-class" />);
 
 		const box = screen.getByTestId('test-box');
 
 		expect(box).toHaveAttribute('id', 'test-id');
 		expect(box).toHaveClass('test-class');
+	});
+
+	it('should render with sx prop', () => {
+		render(<Box data-testid="test-box" sx={{ fontSize: 'sm' }} />);
+
+		const box = screen.getByTestId('test-box');
+
+		expect(box.getAttribute('class')).toContain('css-');
 	});
 
 	it('should correctly render with as prop (native html element)', () => {
@@ -46,37 +54,27 @@ describe('Box', () => {
 		expect(box).toHaveAttribute('href', 'https://example.com');
 	});
 
-	it('should correctly render with as prop (react component)', () => {
+	it('should correctly render with as prop (custom component)', () => {
 		render(
-			<Box as={CustomComponent} custom="here">
-				<span data-testid="child">Test</span>
-			</Box>,
+			<Box
+				data-testid="test-box"
+				as={CustomComponent}
+				customProp="test-prop"
+			/>,
 		);
 
-		const box = screen.getByTestId('custom-test-component');
+		const box = screen.getByTestId('test-box');
 
-		expect(box).toBeInTheDocument();
-		expect(box).toHaveTextContent(
-			'custom react component and custom prop: here',
-		);
-
-		const child = screen.getByTestId('child');
-
-		expect(child).toBeInTheDocument();
-		expect(child).toHaveTextContent('Test');
+		expect(box).toBeInstanceOf(HTMLParagraphElement);
+		expect(box).toHaveTextContent('test-prop');
 	});
 });
 
-type CustomComponentProps = PropsWithChildren<{ custom: string }>;
-
-function CustomComponent({ children, custom }: CustomComponentProps) {
-	return (
-		<div data-testid="custom-test-component">
-			<div>
-				custom react component and custom prop:
-				{custom}
-			</div>
-			<div>{children}</div>
-		</div>
-	);
+function CustomComponent({
+	customProp,
+	...otherProps
+}: {
+	customProp?: string;
+}) {
+	return <p {...otherProps}>{customProp}</p>;
 }

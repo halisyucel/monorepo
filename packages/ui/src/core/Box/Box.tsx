@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
 import cx from 'classnames';
+import { ElementType } from 'react';
 import { sx, PolymorphicElementProps } from '../../system';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
