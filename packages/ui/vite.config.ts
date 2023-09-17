@@ -30,4 +30,12 @@ export default defineConfig({
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/setup.ts'],
+    testMatch: ['./src/**/*.test.tsx', './src/**/*.test.ts'],
+    globals: true,
+  },
 });
