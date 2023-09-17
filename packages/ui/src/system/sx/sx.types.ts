@@ -223,6 +223,85 @@ export type PaddingSx = React.CSSProperties['padding'];
 // gap
 export type GapSx = SpaceSx<'gap'> | React.CSSProperties['gap'];
 
+// drop-shadow
+export const DROP_SHADOW = [
+	'none',
+	'xs',
+	'sm',
+	'md',
+	'lg',
+	'xl',
+	'2xl',
+] as const;
+export type DropShadow = (typeof DROP_SHADOW)[number];
+export type DropShadowSx = DropShadow;
+
+// box-shadow
+export const BOX_SHADOW = [
+	'none',
+	'xs',
+	'sm',
+	'md',
+	'lg',
+	'xl',
+	'2xl',
+	'inner',
+] as const;
+export type BoxShadow = (typeof BOX_SHADOW)[number];
+export type BoxShadowSx = BoxShadow | React.CSSProperties['boxShadow'];
+
+// opacity
+
+// width
+
+// min-width
+
+// max-width
+
+// height
+
+// min-height
+
+// max-height
+
+// box-sizing
+
+// overflow
+
+// overflow-x
+
+// overflow-y
+
+// position
+
+// top
+
+// right
+
+// bottom
+
+// left
+
+// z-index
+
+// background
+
+// background-color
+
+// background-image
+
+// background-position
+
+// background-size
+
+// background-repeat
+
+// background-attachment
+
+// background-clip
+
+// background-origin
+
 // pointer-events
 
 // display

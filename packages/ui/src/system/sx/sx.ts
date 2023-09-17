@@ -57,6 +57,9 @@ export type CSSProps = {
 	gap?: type.GapSx;
 	rowGap?: type.GapSx;
 	columnGap?: type.GapSx;
+
+	boxShadow?: type.BoxShadowSx;
+	dropShadow?: type.DropShadowSx;
 };
 
 export type SxProps = CSSProps &
@@ -117,6 +120,9 @@ function baseSx({
 	gap,
 	rowGap,
 	columnGap,
+
+	boxShadow,
+	dropShadow,
 
 	...otherProps
 }: SxProps = {}): string[] {
@@ -551,6 +557,20 @@ function baseSx({
 		} else {
 			emotion.push(`column-gap: ${columnGap};`);
 		}
+	}
+
+	if (boxShadow) {
+		if (type.BOX_SHADOW.includes(boxShadow as type.BoxShadow)) {
+			emotion.push(
+				`box-shadow: var(--${UILibraryPrefix}-boxShadow-${boxShadow});`,
+			);
+		} else {
+			emotion.push(`box-shadow: ${boxShadow};`);
+		}
+	}
+
+	if (dropShadow) {
+		emotion.push(`filter: var(--${UILibraryPrefix}-dropShadow-${dropShadow});`);
 	}
 
 	if (otherProps) {
