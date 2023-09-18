@@ -3,11 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Box from './Box';
 
 const meta: Meta<typeof Box> = {
-	title: 'Core/Layout/Box',
+	title: 'Core/Miscellaneous/Box',
 	component: Box,
 	argTypes: {
 		as: {
-			description: 'The HTML element or React component to render.',
 			options: [
 				'p',
 				'div',
@@ -27,7 +26,6 @@ const meta: Meta<typeof Box> = {
 	},
 	parameters: {
 		controls: {
-			expanded: true,
 			exclude: ['sx', 'elementRef'],
 		},
 	},
