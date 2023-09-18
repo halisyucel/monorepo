@@ -37,7 +37,7 @@ type Story = StoryObj<typeof Box>;
 export const Default: Story = {
 	args: {
 		as: 'div',
-		children: 'I am a humble polymorphic Box',
+		children: 'Lorem ipsum dolor sit amet',
 	},
 	render: (props) => <Box {...props} />,
 };
