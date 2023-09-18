@@ -221,7 +221,8 @@ export type MarginSx = React.CSSProperties['margin'];
 export type PaddingSx = React.CSSProperties['padding'];
 
 // gap
-export type GapSx = SpaceSx<'gap'> | React.CSSProperties['gap'];
+export type Gap = SpaceSx<'gap'>;
+export type GapSx = Gap | React.CSSProperties['gap'];
 
 // drop-shadow
 export const DROP_SHADOW = [
@@ -269,6 +270,57 @@ export type OutlineOffset = (typeof OUTLINE_OFFSET)[number];
 export type OutlineOffsetSx =
 	| OutlineOffset
 	| React.CSSProperties['outlineOffset'];
+
+// justify-content
+export type JustifyContent =
+	| 'flex-start'
+	| 'flex-end'
+	| 'center'
+	| 'space-between'
+	| 'space-around'
+	| 'space-evenly';
+export type JustifyContentSx =
+	| JustifyContent
+	| React.CSSProperties['justifyContent'];
+
+// align-items
+export type AlignItems =
+	| 'flex-start'
+	| 'flex-end'
+	| 'center'
+	| 'baseline'
+	| 'stretch';
+export type AlignItemsSx = AlignItems | React.CSSProperties['alignItems'];
+
+// flex-direction
+export type FlexDirection = 'row' | 'row-reverse' | 'column' | 'column-reverse';
+export type FlexDirectionSx =
+	| FlexDirection
+	| React.CSSProperties['flexDirection'];
+
+// flex-wrap
+export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
+export type FlexWrapSx = FlexWrap | React.CSSProperties['flexWrap'];
+
+// display
+export type Display =
+	| 'block'
+	| 'inline'
+	| 'inline-block'
+	| 'flex'
+	| 'inline-flex'
+	| 'grid'
+	| 'inline-grid'
+	| 'none';
+export type DisplaySx = Display | React.CSSProperties['display'];
+
+// flex
+export type Flex = '1' | 'auto' | 'initial' | 'none';
+export type FlexSx = Flex | React.CSSProperties['flex'];
+
+// flex-grow
+export type FlexGrow = '0' | '1' | '2' | '3' | '4' | '5';
+export type FlexGrowSx = FlexGrow | React.CSSProperties['flexGrow'];
 
 // opacity
 
@@ -323,10 +375,6 @@ export type OutlineOffsetSx =
 // background-origin
 
 // pointer-events
-
-// display
-
-// flex-direction
 
 // flex-wrap
 

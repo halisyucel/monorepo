@@ -67,6 +67,16 @@ export type CSSProps = {
 	outlineColor?: type.ColorSx;
 	outlineStyle?: type.OutlineStyleSx;
 	outlineOffset?: type.OutlineOffsetSx;
+
+	flexWrap?: type.FlexWrapSx;
+	alignItems?: type.AlignItemsSx;
+	flexDirection?: type.FlexDirectionSx;
+	justifyContent?: type.JustifyContentSx;
+
+	display?: type.DisplaySx;
+
+	flex?: type.FlexSx;
+	flexGrow?: type.FlexGrowSx;
 };
 
 export type SxProps = CSSProps &
@@ -137,6 +147,16 @@ function baseSx({
 	outlineColor,
 	outlineStyle,
 	outlineOffset,
+
+	flexWrap,
+	alignItems,
+	flexDirection,
+	justifyContent,
+
+	display,
+
+	flex,
+	flexGrow,
 
 	...otherProps
 }: SxProps = {}): string[] {
@@ -629,6 +649,34 @@ function baseSx({
 		} else {
 			emotion.push(`outline-offset: ${outlineOffset};`);
 		}
+	}
+
+	if (flexWrap) {
+		emotion.push(`flex-wrap: ${flexWrap};`);
+	}
+
+	if (alignItems) {
+		emotion.push(`align-items: ${alignItems};`);
+	}
+
+	if (flexDirection) {
+		emotion.push(`flex-direction: ${flexDirection};`);
+	}
+
+	if (justifyContent) {
+		emotion.push(`justify-content: ${justifyContent};`);
+	}
+
+	if (display) {
+		emotion.push(`display: ${display};`);
+	}
+
+	if (flex) {
+		emotion.push(`flex: ${flex};`);
+	}
+
+	if (flexGrow) {
+		emotion.push(`flex-grow: ${flexGrow};`);
 	}
 
 	if (otherProps) {
