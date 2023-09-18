@@ -7,6 +7,7 @@ import {
 	TextAlign,
 	FontWeight,
 	FontFamily,
+	TextOverflow,
 	TextTransform,
 	TextDecoration,
 	PolymorphicElementProps,
@@ -18,6 +19,7 @@ export interface TextProps {
 	color?: Color;
 	align?: TextAlign;
 	weight?: FontWeight;
+	overflow?: TextOverflow;
 	transform?: TextTransform;
 	decoration?: TextDecoration;
 }
@@ -34,6 +36,7 @@ export default function Text<T extends ElementType<any> = 'div'>({
 	color,
 	align,
 	weight,
+	overflow,
 	transform,
 	decoration,
 	...otherProps
@@ -50,6 +53,7 @@ export default function Text<T extends ElementType<any> = 'div'>({
 					textAlign: align,
 					fontFamily: font,
 					fontWeight: weight,
+					textOverflow: overflow,
 					textTransform: transform,
 					textDecoration: decoration,
 					...sxProps,
