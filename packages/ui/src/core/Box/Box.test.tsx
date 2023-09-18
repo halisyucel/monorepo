@@ -28,21 +28,30 @@ describe('Box', () => {
 		expect(box).toHaveClass('test-class');
 	});
 
-	it('should render with custom props', () => {
-		render(<Box data-testid="test-box" id="test-id" className="test-class" />);
+	it('should render with html attributes', () => {
+		render(<Box data-testid="test-box" id="test-id" />);
 
 		const box = screen.getByTestId('test-box');
 
 		expect(box).toHaveAttribute('id', 'test-id');
-		expect(box).toHaveClass('test-class');
 	});
 
-	it('should render with sx prop', () => {
-		render(<Box data-testid="test-box" sx={{ fontSize: 'sm' }} />);
+	it('should render with ref', () => {
+		const ref = { current: null };
+
+		render(<Box data-testid="test-box" elementRef={ref} />);
 
 		const box = screen.getByTestId('test-box');
 
-		expect(box.getAttribute('class')).toContain('css-');
+		expect(ref.current).toBe(box);
+	});
+
+	it('should render with sx prop', () => {
+		render(<Box data-testid="test-box" sx={{ fontSize: '16px' }} />);
+
+		const box = screen.getByTestId('test-box');
+
+		expect(getComputedStyle(box).fontSize).toBe('16px');
 	});
 
 	it('should correctly render with as prop (native html element)', () => {
