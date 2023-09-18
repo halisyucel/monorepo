@@ -1,7 +1,5 @@
 import { ElementType } from 'react';
-import cx from 'classnames';
 import {
-	sx,
 	Color,
 	FontSize,
 	TextAlign,
@@ -12,6 +10,7 @@ import {
 	TextDecoration,
 	PolymorphicElementProps,
 } from '../../system';
+import Box from '../Box';
 
 export interface TextProps {
 	size?: FontSize;
@@ -27,7 +26,6 @@ export interface TextProps {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function Text<T extends ElementType<any> = 'div'>({
 	as,
-	className,
 	elementRef,
 	sx: sxProps,
 
@@ -40,26 +38,24 @@ export default function Text<T extends ElementType<any> = 'div'>({
 	transform,
 	decoration,
 	...otherProps
-}: PolymorphicElementProps<T> & TextProps) {
+}: PolymorphicElementProps<T, TextProps> & TextProps) {
 	const Component = as || 'div';
 
 	return (
-		<Component
-			ref={elementRef}
-			className={cx(
-				sx({
-					color,
-					fontSize: size,
-					textAlign: align,
-					fontFamily: font,
-					fontWeight: weight,
-					textOverflow: overflow,
-					textTransform: transform,
-					textDecoration: decoration,
-					...sxProps,
-				}),
-				className,
-			)}
+		<Box
+			as={Component}
+			elementRef={elementRef}
+			sx={{
+				color,
+				fontSize: size,
+				textAlign: align,
+				fontFamily: font,
+				fontWeight: weight,
+				textOverflow: overflow,
+				textTransform: transform,
+				textDecoration: decoration,
+				...sxProps,
+			}}
 			{...otherProps}
 		/>
 	);
