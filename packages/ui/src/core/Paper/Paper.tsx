@@ -1,12 +1,11 @@
-import cx from 'classnames';
 import { ElementType } from 'react';
 import {
-	sx,
 	Color,
 	BoxShadow,
 	BorderRadius,
 	PolymorphicElementProps,
 } from '../../system';
+import Box from '../Box';
 
 export interface PaperProps {
 	radius?: BorderRadius;
@@ -19,7 +18,6 @@ export interface PaperProps {
 export default function Paper<T extends ElementType<any> = 'div'>({
 	// default props
 	as,
-	className,
 	elementRef,
 	sx: sxProps,
 
@@ -29,24 +27,22 @@ export default function Paper<T extends ElementType<any> = 'div'>({
 	background = 'slate-50',
 	withBorder,
 	...otherProps
-}: PolymorphicElementProps<T> & PaperProps) {
+}: PolymorphicElementProps<T, PaperProps> & PaperProps) {
 	const Component = as || 'div';
 
 	return (
-		<Component
-			ref={elementRef}
-			className={cx(
-				sx({
-					boxShadow: shadow,
-					borderRadius: radius,
-					backgroundColor: background,
-					borderWidth: withBorder ? 'medium' : undefined,
-					borderStyle: withBorder ? 'solid' : undefined,
-					borderColor: withBorder ? 'gray-200' : undefined,
-					...sxProps,
-				}),
-				className,
-			)}
+		<Box
+			as={Component}
+			elementRef={elementRef}
+			sx={{
+				boxShadow: shadow,
+				borderRadius: radius,
+				backgroundColor: background,
+				borderWidth: withBorder ? 'medium' : undefined,
+				borderStyle: withBorder ? 'solid' : undefined,
+				borderColor: withBorder ? 'gray-200' : undefined,
+				...sxProps,
+			}}
 			{...otherProps}
 		/>
 	);

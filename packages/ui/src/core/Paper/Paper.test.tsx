@@ -7,9 +7,13 @@ describe('Paper', () => {
 		render(<Paper data-testid="test-paper" />);
 
 		const paper = screen.getByTestId('test-paper');
+		const className = paper.getAttribute('class');
 
 		expect(paper).toBeInTheDocument();
 		expect(paper).toBeInstanceOf(HTMLDivElement);
+		expect(window.document.head.innerHTML).toMatch(
+			`.${className}{background-color:var(--ui-color-slate-50);border-radius:var(--ui-borderRadius-md);}`,
+		);
 	});
 
 	it('should render with children', () => {
@@ -28,26 +32,23 @@ describe('Paper', () => {
 		expect(paper).toHaveClass('test-class');
 	});
 
-	it('should render with custom props', () => {
-		render(
-			<Paper data-testid="test-paper" id="test-id" className="test-class" />,
-		);
+	it('should render with html attributes', () => {
+		render(<Paper data-testid="test-paper" id="test-id" />);
 
 		const paper = screen.getByTestId('test-paper');
 
 		expect(paper).toHaveAttribute('id', 'test-id');
-		expect(paper).toHaveClass('test-class');
 	});
 
 	it('should render with sx prop', () => {
-		render(<Paper data-testid="test-paper" sx={{ fontSize: 'sm' }} />);
+		render(<Paper data-testid="test-paper" sx={{ fontSize: '16px' }} />);
 
 		const paper = screen.getByTestId('test-paper');
 
-		expect(paper.getAttribute('class')).toContain('css-');
+		expect(getComputedStyle(paper).fontSize).toBe('16px');
 	});
 
-	it('should correctly render with as prop (native html element)', () => {
+	it('should render correctly with as prop (native html element)', () => {
 		render(
 			<Paper data-testid="test-paper" as="a" href="https://example.com" />,
 		);
@@ -58,7 +59,7 @@ describe('Paper', () => {
 		expect(paper).toHaveAttribute('href', 'https://example.com');
 	});
 
-	it('should correctly render with as prop (custom component)', () => {
+	it('should render correctly with as prop (custom component)', () => {
 		render(
 			<Paper
 				data-testid="test-paper"
@@ -71,6 +72,50 @@ describe('Paper', () => {
 
 		expect(paper).toBeInstanceOf(HTMLParagraphElement);
 		expect(paper).toHaveTextContent('test-prop');
+	});
+
+	it('should render correctly with radius prop', () => {
+		render(<Paper data-testid="test-paper" radius="sm" />);
+
+		const paper = screen.getByTestId('test-paper');
+
+		expect(getComputedStyle(paper).borderRadius).toBe(
+			'var(--ui-borderRadius-sm)',
+		);
+	});
+
+	it('should render correctly with shadow prop', () => {
+		render(<Paper data-testid="test-paper" shadow="sm" />);
+
+		const paper = screen.getByTestId('test-paper');
+
+		expect(getComputedStyle(paper).boxShadow).toBe('var(--ui-boxShadow-sm)');
+	});
+
+	it('should render correctly with background prop', () => {
+		render(<Paper data-testid="test-paper" background="blue-500" />);
+
+		const paper = screen.getByTestId('test-paper');
+		const className = paper.getAttribute('class');
+
+		expect(window.document.head.innerHTML).toMatch(
+			`.${className}{background-color:var(--ui-color-blue-500);`,
+		);
+	});
+
+	it('should render correctly with withBorder prop', () => {
+		render(<Paper data-testid="test-paper" withBorder />);
+
+		const paper = screen.getByTestId('test-paper');
+		const className = paper.getAttribute('class');
+
+		expect(window.document.head.innerHTML).toMatch(
+			`.${className}{background-color:var(--ui-color-slate-50);` +
+				`border-color:var(--ui-color-gray-200);` +
+				`border-radius:var(--ui-borderRadius-md);` +
+				`border-width:var(--ui-borderWidth-medium);` +
+				`border-style:var(--ui-borderStyle-solid);}`,
+		);
 	});
 });
 
