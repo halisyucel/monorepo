@@ -1,0 +1,33 @@
+$outline-width: (
+  'thin': 1,
+  'medium': 2,
+  'thick': 4
+);
+
+$outline-style: (
+  'solid': solid,
+  'dashed': dashed,
+  'dotted': dotted,
+  'double': double,
+);
+
+$outline-offset: (
+  'none': 0,
+  'sm': 1,
+  'md': 2,
+  'lg': 4,
+);
+
+:root {
+  @each $key, $value in $outline-width {
+    --#{$library-prefix}-outlineWidth-#{$key}: #{pxrem($value)};
+  }
+
+  @each $key, $value in $outline-style {
+    --#{$library-prefix}-outlineStyle-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $outline-offset {
+    --#{$library-prefix}-outlineOffset-#{$key}: #{pxrem($value)};
+  }
+}

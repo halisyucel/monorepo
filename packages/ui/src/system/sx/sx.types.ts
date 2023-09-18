@@ -250,6 +250,26 @@ export const BOX_SHADOW = [
 export type BoxShadow = (typeof BOX_SHADOW)[number];
 export type BoxShadowSx = BoxShadow | React.CSSProperties['boxShadow'];
 
+// box-sizing
+export type BoxSizingSx = React.CSSProperties['boxSizing'];
+
+// outline-width
+export const OUTLINE_WIDTH = ['thin', 'medium', 'thick'] as const;
+export type OutlineWidth = (typeof OUTLINE_WIDTH)[number];
+export type OutlineWidthSx = OutlineWidth | React.CSSProperties['outlineWidth'];
+
+// outline-style
+export const OUTLINE_STYLE = ['solid', 'dashed', 'dotted', 'double'] as const;
+export type OutlineStyle = (typeof OUTLINE_STYLE)[number];
+export type OutlineStyleSx = OutlineStyle | React.CSSProperties['outlineStyle'];
+
+// outline-offset
+export const OUTLINE_OFFSET = ['none', 'sm', 'md', 'lg'] as const;
+export type OutlineOffset = (typeof OUTLINE_OFFSET)[number];
+export type OutlineOffsetSx =
+	| OutlineOffset
+	| React.CSSProperties['outlineOffset'];
+
 // opacity
 
 // width

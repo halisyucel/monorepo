@@ -60,6 +60,13 @@ export type CSSProps = {
 
 	boxShadow?: type.BoxShadowSx;
 	dropShadow?: type.DropShadowSx;
+
+	boxSizing?: type.BoxSizingSx;
+
+	outlineWidth?: type.OutlineWidthSx;
+	outlineColor?: type.ColorSx;
+	outlineStyle?: type.OutlineStyleSx;
+	outlineOffset?: type.OutlineOffsetSx;
 };
 
 export type SxProps = CSSProps &
@@ -123,6 +130,13 @@ function baseSx({
 
 	boxShadow,
 	dropShadow,
+
+	boxSizing,
+
+	outlineWidth,
+	outlineColor,
+	outlineStyle,
+	outlineOffset,
 
 	...otherProps
 }: SxProps = {}): string[] {
@@ -573,6 +587,50 @@ function baseSx({
 		emotion.push(`filter: var(--${UILibraryPrefix}-dropShadow-${dropShadow});`);
 	}
 
+	if (boxSizing) {
+		emotion.push(`box-sizing: ${boxSizing};`);
+	}
+
+	if (outlineWidth) {
+		if (type.OUTLINE_WIDTH.includes(outlineWidth as type.OutlineWidth)) {
+			emotion.push(
+				`outline-width: var(--${UILibraryPrefix}-outlineWidth-${outlineWidth});`,
+			);
+		} else {
+			emotion.push(`outline-width: ${outlineWidth};`);
+		}
+	}
+
+	if (outlineColor) {
+		if (type.COLOR.includes(outlineColor as type.Color)) {
+			emotion.push(
+				`outline-color: var(--${UILibraryPrefix}-color-${outlineColor});`,
+			);
+		} else {
+			emotion.push(`outline-color: ${outlineColor};`);
+		}
+	}
+
+	if (outlineStyle) {
+		if (type.OUTLINE_STYLE.includes(outlineStyle as type.OutlineStyle)) {
+			emotion.push(
+				`outline-style: var(--${UILibraryPrefix}-outlineStyle-${outlineStyle});`,
+			);
+		} else {
+			emotion.push(`outline-style: ${outlineStyle};`);
+		}
+	}
+
+	if (outlineOffset) {
+		if (type.OUTLINE_OFFSET.includes(outlineOffset as type.OutlineOffset)) {
+			emotion.push(
+				`outline-offset: var(--${UILibraryPrefix}-outlineOffset-${outlineOffset});`,
+			);
+		} else {
+			emotion.push(`outline-offset: ${outlineOffset};`);
+		}
+	}
+
 	if (otherProps) {
 		Object.entries(otherProps).forEach(([key, value]) => {
 			const mediaRegExp = new RegExp(
@@ -593,9 +651,9 @@ function baseSx({
 						direction === 'up' ? 'min' : 'max'
 					}-width: ${size}px) { ${baseSx(value)} }`,
 				);
+			} else {
+				emotion.push(`${key} { ${baseSx(value).join('\n')} }`);
 			}
-
-			emotion.push(`${key} { ${baseSx(value)} }`);
 		});
 	}
 
