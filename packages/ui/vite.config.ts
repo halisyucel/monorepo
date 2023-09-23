@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
+import react from '@vitejs/plugin-react';
 
 // TODO: do something for not building stories and tests
 export default defineConfig({
