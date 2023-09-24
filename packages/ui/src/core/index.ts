@@ -1,3 +1,5 @@
+import '@monorepo/styles/globals.scss';
+
 // Box
 export { default as Box } from './Box';
 
@@ -12,7 +14,3 @@ export type { FlexProps } from './Flex';
 // Paper
 export { default as Paper } from './Paper';
 export type { PaperProps } from './Paper';
-
-// Icon
-export { default as Icon } from './Icon';
-export type { IconProps } from './Icon';

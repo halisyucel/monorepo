@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@monorepo/ui": "file:../ui",
+    "@monorepo/icons": "file:../icons",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

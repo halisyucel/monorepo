@@ -2,14 +2,12 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import react from '@vitejs/plugin-react';
 
-// TODO: do something for not building stories and tests
 export default defineConfig({
   plugins: [react(), dts({ insertTypesEntry: true })],
   build: {
     lib: {
       entry: {
         core: './src/core/index.ts',
-        // hooks: './src/hooks/index.ts',
         system: './src/system/index.ts',
       },
       name: '@monorepo/ui',
@@ -21,11 +19,10 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react'],
       output: {
         globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
+          react: 'React'
         },
       },
     },
