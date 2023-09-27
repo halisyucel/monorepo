@@ -3,5 +3,9 @@
   "version": "0.1.0",
   "npmClient": "yarn",
   "registry": "http://localhost:4873/",
-  "conventionalCommits": true
+  "command": {
+    "version": {
+      "conventionalCommits": true
+    }
+  }
 }
