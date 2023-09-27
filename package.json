@@ -5,10 +5,13 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run build --scope=@monorepo/icons --scope=@monorepo/ui",
-    "storybook": "lerna run storybook",
-    "storybook:ui": "lerna run storybook --scope=@monorepo/ui",
-    "storybook:web": "lerna run storybook --scope=@monorepo/web"
+    "lerna:storybook": "lerna run storybook",
+    "lerna:storybook:ui": "lerna run storybook --scope=@monorepo/ui",
+    "lerna:storybook:web": "lerna run storybook --scope=@monorepo/web",
+
+    "lerna:build": "lerna run build --scope=@monorepo/icons --scope=@monorepo/ui",
+    "lerna:version": "lerna version --no-private",
+    "lerna:publish": "lerna publish from-package --no-private"
   },
   "dependencies": {},
   "devDependencies": {
