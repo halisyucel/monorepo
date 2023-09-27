@@ -1,12 +1,25 @@
 {
   "name": "@monorepo/eslint-config",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "index.js",
   "license": "MIT",
+  "eslintConfig": {
+    "extends": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=8.47.0",
+    "prettier": ">=3.0.0"
+  },
   "devDependencies": {
+    "eslint": "^8.47.0",
+    "prettier": "^3.0.2"
+  },
+  "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
-    "eslint": "^8.47.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
