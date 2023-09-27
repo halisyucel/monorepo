@@ -13,13 +13,13 @@
     "format:check": "prettier -c 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@monorepo/icons": "^0.1.3",
-    "@monorepo/ui": "0.1.3",
+    "@monorepo/icons": "^0.1.0",
+    "@monorepo/ui": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@monorepo/eslint-config": "^0.1.2",
+    "@monorepo/eslint-config": "^0.1.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.4",
