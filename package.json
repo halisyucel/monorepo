@@ -10,8 +10,9 @@
     "lerna:storybook:web": "lerna run storybook --scope=@monorepo/web",
 
     "lerna:build": "lerna run build --scope=@monorepo/icons --scope=@monorepo/ui",
-    "lerna:version": "lerna version --no-private",
-    "lerna:publish": "lerna publish from-package --no-private"
+    "lerna:publish": "lerna publish from-package --no-private",
+
+    "dev:web": "lerna run dev --scope:web"
   },
   "dependencies": {},
   "devDependencies": {
