@@ -1,0 +1,1 @@
+eslint-config for react + typescript application
