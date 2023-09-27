@@ -1,6 +1,17 @@
 {
   "license": "MIT",
+  "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "build": "lerna run build --scope=@monorepo/icons --scope=@monorepo/ui",
+    "storybook": "lerna run storybook",
+    "storybook:ui": "lerna run storybook --scope=@monorepo/ui",
+    "storybook:web": "lerna run storybook --scope=@monorepo/web"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.3.0"
+  }
 }

@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio
+    container_name: verdaccio
+    ports:
+      - '4873:4873'
+    volumes:
+      - verdaccio-data:/verdaccio/storage
+
+volumes:
+  verdaccio-data:
