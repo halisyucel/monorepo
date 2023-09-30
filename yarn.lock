@@ -1619,6 +1619,16 @@
   resolved "http://localhost:4873/@microsoft/tsdoc/-/tsdoc-0.14.2.tgz#c3ec604a0b54b9a9b87e9735dfc59e1a5da6a5fb"
   integrity sha512-9b8mPpKrfeGRuhFH5iO1iwCLeIIsV6+H1sRfxbkoGXIyQE2BTsPd9zqSqQJ+pv5sJ/hT5M1zvOFL02MnEezFug==
 
+"@monorepo/ui@0.1.1":
+  version "0.1.1"
+  resolved "http://localhost:4873/@monorepo/ui/-/ui-0.1.1.tgz#71a91a0155a0e549d228d3fb99cba8536c79ea18"
+  integrity sha512-Wzi9QZuLl4Mez+hZZFVbLN+21CcRy2sI3vj+AEVK8ACIIB4nk/o5EhHqCMsiG0d+DKEKHZmF02v1TsS3mosXDw==
+  dependencies:
+    "@emotion/css" "^11.11.2"
+    "@monorepo/styles" "^0.1.0"
+    classnames "^2.3.2"
+    react "^18.2.0"
+
 "@ndelangen/get-tarball@^3.0.7":
   version "3.0.9"
   resolved "http://localhost:4873/@ndelangen/get-tarball/-/get-tarball-3.0.9.tgz#727ff4454e65f34707e742a59e5e6b1f525d8964"
@@ -4584,6 +4594,13 @@ classnames@^2.3.2:
   resolved "http://localhost:4873/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
+clean-package@^2.2.0:
+  version "2.2.0"
+  resolved "http://localhost:4873/clean-package/-/clean-package-2.2.0.tgz#8348b131c60a785457173f0e34129269835a2833"
+  integrity sha512-vLv8kRqvh4smPDpqAYFPLEijTppAd/cfCz4yBcUGoVl/JKu6ZWKhlo+G/cAmwlSa29RudfBeuyiNEzas8bTwEQ==
+  dependencies:
+    dot-prop "^6.0.1"
+
 clean-stack@^2.0.0:
   version "2.2.0"
   resolved "http://localhost:4873/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
@@ -5254,6 +5271,13 @@ dot-prop@^5.1.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.3.0.tgz#90ccce708cd9cd82cc4dc8c3ddd9abdd55b20e88"
   integrity sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
+  dependencies:
+    is-obj "^2.0.0"
+
+dot-prop@^6.0.1:
+  version "6.0.1"
+  resolved "http://localhost:4873/dot-prop/-/dot-prop-6.0.1.tgz#fc26b3cf142b9e59b74dbd39ed66ce620c681083"
+  integrity sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==
   dependencies:
     is-obj "^2.0.0"
 
@@ -7466,6 +7490,11 @@ json5@^2.2.2, json5@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
+
+json@^11.0.0:
+  version "11.0.0"
+  resolved "http://localhost:4873/json/-/json-11.0.0.tgz#2e84493134e2f42c131165aa22a124df38b3a3ee"
+  integrity sha512-N/ITv3Yw9Za8cGxuQqSqrq6RHnlaHWZkAFavcfpH/R52522c26EbihMxnY7A1chxfXJ4d+cEFIsyTgfi9GihrA==
 
 jsonc-parser@3.2.0, jsonc-parser@^3.2.0:
   version "3.2.0"
