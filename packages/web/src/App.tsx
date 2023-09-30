@@ -1,5 +1,4 @@
 import { Text } from '@monorepo/ui/core';
-import { IconLogout } from '@monorepo/icons';
 
 export default function App() {
 	return (
@@ -12,7 +11,7 @@ export default function App() {
 				href="https://example.com"
 				target="_blank"
 			>
-				example.com <IconLogout />
+				example.com
 			</Text>
 		</div>
 	);

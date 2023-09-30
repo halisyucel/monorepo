@@ -7,19 +7,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint:eslint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:eslint": "DEBUG=* eslint 'src/**/*.{ts,tsx}'",
     "lint": "tsc && yarn lint:eslint",
     "format": "prettier --write 'src/**/*.{ts,tsx}' && yarn lint:eslint --fix",
     "format:check": "prettier -c 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@monorepo/icons": "^0.1.0",
-    "@monorepo/ui": "^0.1.0",
+    "@monorepo/styles": "^0.1.0",
+    "@monorepo/ui": "0.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@monorepo/eslint-config": "^0.1.0",
+    "@monorepo/eslint-config": "0.1.3",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.8",
     "@vitejs/plugin-react": "^4.0.4",
