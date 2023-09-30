@@ -1,22 +1,26 @@
 {
   "name": "@monorepo/eslint-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "index.js",
   "license": "MIT",
   "eslintConfig": {
     "extends": "./index.js"
   },
+  "scripts": {
+    "prepack": "json -f package.json -I -e 'delete this.devDependencies;'"
+  },
   "files": [
     "index.js"
   ],
   "peerDependencies": {
-    "eslint": ">=8.47.0",
-    "prettier": ">=3.0.0",
-    "react": "^18.2.0",
-    "typescript": "^5.2.2"
+    "eslint": ">=8.4",
+    "prettier": ">=3",
+    "react": ">=18",
+    "typescript": ">=5"
   },
   "devDependencies": {
     "eslint": "^8.47.0",
+    "json": "^11.0.0",
     "prettier": "^3.0.2",
     "react": "^18.2.0",
     "typescript": "^5.2.2"
