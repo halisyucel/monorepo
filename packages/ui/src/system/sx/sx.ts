@@ -74,9 +74,6 @@ export type CSSProps = {
 	justifyContent?: type.JustifyContentSx;
 
 	display?: type.DisplaySx;
-
-	flex?: type.FlexSx;
-	flexGrow?: type.FlexGrowSx;
 };
 
 export type SxProps = CSSProps &
@@ -154,10 +151,6 @@ function baseSx({
 	justifyContent,
 
 	display,
-
-	flex,
-	flexGrow,
-
 	...otherProps
 }: SxProps = {}): string[] {
 	const emotion: string[] = [];
@@ -669,14 +662,6 @@ function baseSx({
 
 	if (display) {
 		emotion.push(`display: ${display};`);
-	}
-
-	if (flex) {
-		emotion.push(`flex: ${flex};`);
-	}
-
-	if (flexGrow) {
-		emotion.push(`flex-grow: ${flexGrow};`);
 	}
 
 	if (otherProps) {
