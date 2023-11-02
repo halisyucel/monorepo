@@ -11,13 +11,5 @@
     "ecmaVersion": "latest",
     "sourceType": "module",
     "project": ["./tsconfig.json", "./tsconfig.node.json"]
-  },
-  "rules": {
-    "import/no-unresolved": [
-      "error",
-      {
-        "ignore": ["^@monorepo/"]
-      }
-    ]
   }
 }
