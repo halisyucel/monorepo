@@ -314,14 +314,6 @@ export type Display =
 	| 'none';
 export type DisplaySx = Display | React.CSSProperties['display'];
 
-// flex
-export type Flex = '1' | 'auto' | 'initial' | 'none';
-export type FlexSx = Flex | React.CSSProperties['flex'];
-
-// flex-grow
-export type FlexGrow = '0' | '1' | '2' | '3' | '4' | '5';
-export type FlexGrowSx = FlexGrow | React.CSSProperties['flexGrow'];
-
 // opacity
 
 // width

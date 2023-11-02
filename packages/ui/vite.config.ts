@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+
 import dts from 'vite-plugin-dts';
 import react from '@vitejs/plugin-react';
 
@@ -6,17 +7,9 @@ export default defineConfig({
   plugins: [react(), dts()],
   build: {
     lib: {
-      entry: {
-        core: './src/core/index.ts',
-        system: './src/system/index.ts',
-      },
       name: '@monorepo/ui',
-      fileName: (format, entry) => {
-        if (format === 'cjs') {
-          return `ui.${entry}.cjs`;
-        }
-        return `ui.${entry}.${format}.js`;
-      },
+      entry: './src/index.ts',
+      fileName: (format) => format === 'umd' ? 'ui.umd.cjs' : 'ui.es.js',
     },
     rollupOptions: {
       external: ['react'],

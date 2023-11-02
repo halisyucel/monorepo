@@ -1,8 +1,19 @@
 {
   "name": "@monorepo/ui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
   "license": "MIT",
+  "files": ["dist"],
+  "main": "./dist/ui.es.js",
+  "module": "./dist/ui.umd.cjs",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "vitest",
     "build": "tsc && vite build",
@@ -51,20 +62,5 @@
     "vite": "^4.4.9",
     "vite-plugin-dts": "^3.5.2",
     "vitest": "^0.34.6"
-  },
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    "./core": {
-      "import": "./dist/ui.core.es.js",
-      "require": "./dist/ui.core.cjs",
-      "types": "./dist/core/index.d.ts"
-    },
-    "./system": {
-      "import": "./dist/ui.system.es.js",
-      "require": "./dist/ui.system.cjs",
-      "types": "./dist/system/index.d.ts"
-    }
   }
 }
