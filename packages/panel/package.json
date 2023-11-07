@@ -2,7 +2,7 @@
   "name": "panel",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "strapi application for monorepo",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -11,13 +11,17 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.15.0",
-    "@strapi/plugin-users-permissions": "4.15.0",
+    "@strapi/plugin-graphql": "^4.15.0",
     "@strapi/plugin-i18n": "4.15.0",
-    "mysql": "2.18.1"
-  },
-  "author": {
-    "name": "A Strapi developer"
+    "@strapi/plugin-users-permissions": "4.15.0",
+    "@strapi/provider-email-sendgrid": "^4.15.0",
+    "@strapi/provider-upload-aws-s3": "^4.15.0",
+    "@strapi/strapi": "4.15.0",
+    "mysql": "2.18.1",
+    "strapi-plugin-comments": "^2.2.15",
+    "strapi-plugin-menus": "^1.5.0",
+    "strapi-plugin-publisher": "^1.5.2",
+    "strapi-plugin-redirects": "^0.0.6"
   },
   "strapi": {
     "uuid": "70c5d3f1-af40-4802-865e-d30f2c4fbc60"
