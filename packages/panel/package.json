@@ -1,27 +1,37 @@
 {
   "name": "panel",
   "private": true,
+  "license": "MIT",
   "version": "0.1.0",
   "description": "strapi application for monorepo",
   "scripts": {
-    "develop": "strapi develop",
+    "strapi": "strapi",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "develop": "strapi develop",
+    "lint": "tsc && yarn lint:eslint",
+    "lint:eslint": "eslint 'src/**/*.ts'",
+    "format": "prettier --write 'src/**/*.ts' && yarn lint:eslint --fix",
+    "format:check": "prettier -c 'src/**/*.ts'"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-graphql": "^4.15.0",
-    "@strapi/plugin-i18n": "4.15.0",
-    "@strapi/plugin-users-permissions": "4.15.0",
-    "@strapi/provider-email-sendgrid": "^4.15.0",
-    "@strapi/provider-upload-aws-s3": "^4.15.0",
-    "@strapi/strapi": "4.15.0",
+    "@strapi/plugin-graphql": "^4.15.4",
+    "@strapi/plugin-i18n": "4.15.4",
+    "@strapi/plugin-users-permissions": "4.15.4",
+    "@strapi/provider-email-sendgrid": "^4.15.4",
+    "@strapi/provider-upload-aws-s3": "^4.15.4",
+    "@strapi/strapi": "4.15.4",
     "mysql": "2.18.1",
     "strapi-plugin-comments": "^2.2.15",
     "strapi-plugin-menus": "^1.5.0",
     "strapi-plugin-publisher": "^1.5.2",
     "strapi-plugin-redirects": "^0.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "prettier": "^3.0.3",
+    "eslint-plugin-prettier": "^5.0.1",
+    "@monorepo/eslint-config-base": "^0.1.2"
   },
   "strapi": {
     "uuid": "70c5d3f1-af40-4802-865e-d30f2c4fbc60"
@@ -29,6 +39,5 @@
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
-  },
-  "license": "MIT"
+  }
 }
