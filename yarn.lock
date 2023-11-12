@@ -3153,14 +3153,6 @@
   resolved "http://localhost:4873/@microsoft/tsdoc/-/tsdoc-0.14.2.tgz#c3ec604a0b54b9a9b87e9735dfc59e1a5da6a5fb"
   integrity sha512-9b8mPpKrfeGRuhFH5iO1iwCLeIIsV6+H1sRfxbkoGXIyQE2BTsPd9zqSqQJ+pv5sJ/hT5M1zvOFL02MnEezFug==
 
-"@monorepo/ui@0.1.6":
-  version "0.1.6"
-  resolved "http://localhost:4873/@monorepo/ui/-/ui-0.1.6.tgz#d51492b32eb4185f4e7a7aad994469a7bb7798d7"
-  integrity sha512-OEzUtetFSzLxuJGBXnfZaNzTr4C2KMcWso+dbt/NgmYHFWZzQCXheBCE/wnVXpKLHPGBs1UDS4AA0qfSS/bjUQ==
-  dependencies:
-    "@emotion/css" "^11.11.2"
-    classnames "^2.3.2"
-
 "@ndelangen/get-tarball@^3.0.7":
   version "3.0.9"
   resolved "http://localhost:4873/@ndelangen/get-tarball/-/get-tarball-3.0.9.tgz#727ff4454e65f34707e742a59e5e6b1f525d8964"

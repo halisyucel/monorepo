@@ -39,7 +39,7 @@
     "react": ">=18"
   },
   "devDependencies": {
-    "@monorepo/eslint-config": "0.1.4",
+    "@monorepo/eslint-config": "0.1.5",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
