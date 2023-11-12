@@ -1,0 +1,16 @@
+{
+  "name": "@monorepo/scripts",
+  "version": "0.1.0",
+  "license": "MIT",
+  "files": ["src"],
+  "scripts": {
+    "generate:sx": "ts-node ./src/generate:sx/index.ts"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
