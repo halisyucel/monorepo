@@ -8,7 +8,6 @@ module.exports = {
     "airbnb-base",
     "airbnb-typescript",
     "plugin:import/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
@@ -28,6 +27,7 @@ module.exports = {
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
     "prettier/prettier": "error",
+    "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
   },
 };
