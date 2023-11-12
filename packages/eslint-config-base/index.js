@@ -8,16 +8,11 @@ module.exports = {
     "airbnb-base",
     "airbnb-typescript",
     "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
   overrides: [
-    {
-      files: ["*.test.ts", "*.test.tsx"],
-      rules: {
-        "@typescript-eslint/no-use-before-define": "off",
-      },
-    },
     {
       files: ["index.ts"],
       rules: {
